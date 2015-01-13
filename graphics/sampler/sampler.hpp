@@ -8,8 +8,8 @@
 #ifndef CORE_SAMPLER_HPP_
 #define CORE_SAMPLER_HPP_
 
-#include <stdtypes>
-#include <stdgfx>
+#include <types.hpp>
+#include <graphics/graphics.hpp>
 
 namespace core {
 

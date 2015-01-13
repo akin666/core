@@ -10,7 +10,7 @@
 #ifndef COLORTOOLS_H_123_
 #define COLORTOOLS_H_123_
 
-#include "stdgfx"
+#include "graphics.hpp"
 #include <glm/gtx/extented_min_max.hpp>
 
 namespace core {

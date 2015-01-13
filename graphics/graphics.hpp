@@ -1,5 +1,5 @@
 /*
- * STDGFX
+ * GRAPHICS_H
  *
  *  Created on: 1.7.2012
  *      Author: akin
@@ -7,13 +7,13 @@
  *      defines common gfx types.
  */
 
-#ifndef STDGFX_H_123_
-#define STDGFX_H_123_
+#ifndef GRAPHICS_H_123_
+#define GRAPHICS_H_123_
 
 #include <glm/glm.hpp>
 
-#include "stdtypes"
-#include "tcolor"
+#include <types.hpp>
+#include "tcolor.hpp"
 
 namespace core {
 
@@ -28,4 +28,4 @@ using YUVLow = TColor3<uint8>;
 
 } // corens
     
-#endif // STDGFX_H_123_
+#endif // GRAPHICS_H_123_

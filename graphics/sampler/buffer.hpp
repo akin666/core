@@ -8,9 +8,9 @@
 #ifndef CORE_BUFFERSAMPLER_HPP_
 #define CORE_BUFFERSAMPLER_HPP_
 
-#include <stdtypes>
-#include "sampler"
-#include <colortools>
+#include <types.hpp>
+#include <graphics/colortools.hpp>
+#include "sampler.hpp"
 
 namespace core {
 

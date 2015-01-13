@@ -11,9 +11,9 @@
 #ifndef COMMONNATIVE_H_
 #define COMMONNATIVE_H_
 
-#include "stdtypes"
-#include "sampler/buffer"
-#include "stdgfx"
+#include <types.hpp>
+#include <graphics/sampler/buffer.hpp>
+#include <graphics/graphics.hpp>
 
 #ifndef OS_NOT_DETECTED
 # define USE_COMMON_NATIVELIB

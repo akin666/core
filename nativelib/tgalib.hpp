@@ -8,7 +8,7 @@
 #ifndef TGALIB_H
 #define	TGALIB_H
 
-#include <stdtypes>
+#include <types.hpp>
 
 namespace tgalib 
 {

@@ -8,7 +8,7 @@
 #ifndef CORE_COLORSAMPLER_HPP_
 #define CORE_COLORSAMPLER_HPP_
 
-#include "sampler"
+#include "sampler.hpp"
 
 namespace core {
 

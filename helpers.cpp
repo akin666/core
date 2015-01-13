@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 mikael korpela. All rights reserved.
 //
 
-#include "helpers"
+#include "helpers.hpp"
 
 namespace core {
 

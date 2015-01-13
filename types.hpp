@@ -1,5 +1,5 @@
 /*
- * stdtypes
+ * ccctypes
  *
  *  Created on: 1.7.2012
  *      Author: akin
@@ -7,11 +7,10 @@
  *      defines standard types.
  */
 
-#ifndef STDTYPES_H_123_
-#define STDTYPES_H_123_
+#ifndef CCCTYPES_H_123_
+#define CCCTYPES_H_123_
 
-#include "os"
-#include "pixelformat"
+#include "os.hpp"
 #include <limits>	// c++ limits
 #include <climits>	// int limits
 #include <cfloat>	// float limits

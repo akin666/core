@@ -3,7 +3,7 @@
  *
  */
 
-#include "colortools"
+#include "colortools.hpp"
 #include <glm/glm.hpp>
 
 namespace core {

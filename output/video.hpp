@@ -10,8 +10,8 @@
 
 #include <fstream>
 #include <iostream>
-#include <pixelformat>
-#include <stdtypes>
+#include <graphics/pixelformat.hpp>
+#include <types.hpp>
 
 namespace core {
 namespace output {

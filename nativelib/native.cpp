@@ -5,7 +5,7 @@
  *      Author: akin
  */
 
-#include "../native"
+#include "../native.hpp"
 
 #ifdef USE_COMMON_NATIVELIB
 

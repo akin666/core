@@ -5,7 +5,7 @@
  *      Author: akin
  */
 
-#include "pixelformat"
+#include "pixelformat.hpp"
 
 namespace core {
 namespace pixelformat {

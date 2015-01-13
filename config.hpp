@@ -8,7 +8,7 @@
 #ifndef CONFIG_ABC_HPP_
 #define CONFIG_ABC_HPP_
 
-#include <stdtypes>
+#include <types.hpp>
 
 namespace core {
 namespace config {

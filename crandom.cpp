@@ -5,7 +5,7 @@
  *      Author: akin
  */
 
-#include "corerandom"
+#include "crandom.hpp"
 #include <cmath>
 
 namespace  core {

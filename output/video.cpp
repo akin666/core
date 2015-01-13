@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 mikael korpela. All rights reserved.
 //
 
-#include "outputvideo"
-#include <native>
+#include "video.hpp"
+#include <native.hpp>
 
 namespace core {
 namespace output {
