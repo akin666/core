@@ -29,11 +29,11 @@ namespace native  {
 	bool load( std::string path , std::string& content );
 	//bool save( std::string path , std::string& content );
 	
-	template <class PixelType> bool load( std::string path , BufferSampler<PixelType>& buffer ) { return false; }
-	template <> bool load( std::string path , BufferSampler<RGBALow>& buffer );
+	template <class PixelType> bool load( std::string path , graphics::BufferSampler<PixelType>& buffer ) { return false; }
+    template <> bool load( std::string path , graphics::BufferSampler<graphics::RGBALow>& buffer );
 	
-	template <class PixelType> bool save( std::string path , BufferSampler<PixelType>& buffer ) { return false; }
-	template <> bool save( std::string path , BufferSampler<RGBALow>& buffer );
+	template <class PixelType> bool save( std::string path , graphics::BufferSampler<PixelType>& buffer ) { return false; }
+	template <> bool save( std::string path , graphics::BufferSampler<graphics::RGBALow>& buffer );
 } // nativens
 } // corens
 

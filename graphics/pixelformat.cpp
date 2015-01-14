@@ -8,7 +8,7 @@
 #include "pixelformat.hpp"
 
 namespace core {
-namespace pixelformat {
+namespace graphics {
 
 size_t getElementSize( Channels channels )
 {
@@ -74,5 +74,5 @@ const char *getName( Format format )
 	return nullptr;
 }
 
-} // pixelformatns
+} // graphicsns
 } // corens

@@ -7,6 +7,7 @@
 #include <glm/glm.hpp>
 
 namespace core {
+namespace graphics {
 
 /// HSB:
 const float a60 =  1.0f / 6.0f;
@@ -419,4 +420,5 @@ Color YCbCr2rgb( Color from )
 	return to;
 }
     
+} // graphicsns
 } // corens

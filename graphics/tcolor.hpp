@@ -9,6 +9,7 @@
 #define TCOLOR_H_123_
 
 namespace core {
+namespace graphics {
 
 template<class T>
 class TColor3
@@ -224,6 +225,7 @@ public:
 	}
 };
     
+} // graphicsns
 } // corens
 
 #endif // TCOLOR_H_123_

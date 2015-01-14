@@ -14,7 +14,8 @@
 #include <glm/gtx/extented_min_max.hpp>
 
 namespace core {
-
+namespace graphics {
+    
 // HSB
 void rgb2hsb( const Color& from , Color& to );
 void hsb2rgb( const Color& from , Color& to );
@@ -99,6 +100,7 @@ inline float lightMaxDistance( const Color& intensity )
 	return glm::max( distance.r , distance.g , distance.b );
 }
     
+} // graphicsns
 } // corens
 
 #endif // COLORTOOLS_H_123_

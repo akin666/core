@@ -12,7 +12,7 @@
 namespace core {
 namespace output {
 	
-bool Video::init( std::string name, std::string path , int width , int height , pixelformat::Format inputformat , int dpi , int framerate )
+bool Video::init( std::string name, std::string path , int width , int height , graphics::Format inputformat , int dpi , int framerate )
 {
 	if( out.is_open() )
 	{
@@ -21,7 +21,7 @@ bool Video::init( std::string name, std::string path , int width , int height , 
 	
 	this->name = name;
 	
-	const char* pixelformat = pixelformat::getName(inputformat);
+	const char* pixelformat = graphics::getName(inputformat);
 	
 	if( pixelformat == nullptr )
 	{

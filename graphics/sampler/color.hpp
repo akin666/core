@@ -11,6 +11,7 @@
 #include "sampler.hpp"
 
 namespace core {
+namespace graphics {
 
 class ColorSampler : public Sampler
 {
@@ -41,7 +42,8 @@ public:
 		color = this->color;
 	}
 };
-
+    
+} // graphicsns
 } // corens
     
 #endif // CORE_COLORSAMPLER_HPP_

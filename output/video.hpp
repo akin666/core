@@ -22,7 +22,7 @@ private:
 	std::ofstream out;
 	std::string name;
 public:
-	bool init(std::string name, std::string path , int width , int height , pixelformat::Format inputformat , int dpi , int framerate );
+	bool init(std::string name, std::string path , int width , int height , graphics::Format inputformat , int dpi , int framerate );
 	void append( const void *pixels , size_t count );
 	void close();
 

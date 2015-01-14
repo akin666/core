@@ -13,6 +13,7 @@
 #include "sampler.hpp"
 
 namespace core {
+namespace graphics {
 
 template <class CType>
 class BufferSampler : public Sampler
@@ -141,7 +142,8 @@ public:
 		data[index] = pixel;
 	}
 };
-    
+
+} // graphicsns
 } // corens
 
 #endif // CORE_BUFFERSAMPLER_HPP_

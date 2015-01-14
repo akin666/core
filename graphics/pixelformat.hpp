@@ -13,7 +13,7 @@
 #include <iostream>
 
 namespace core {
-namespace pixelformat {
+namespace graphics {
 
 enum Channels
 {
@@ -82,7 +82,7 @@ size_t getElementSize( Channels channels );
 size_t getByteSize( Format format );
 const char *getName( Format format );
 
-} // pixelformatns
+} // graphicsns
 } // corens
 
 #endif // PIXELFORMAT_H_123_

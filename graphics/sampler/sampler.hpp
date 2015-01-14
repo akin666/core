@@ -12,6 +12,7 @@
 #include <graphics/graphics.hpp>
 
 namespace core {
+namespace graphics {
 
 class Sampler
 {
@@ -27,6 +28,7 @@ public:
 	virtual void at( const glm::vec3& at , Color& color ) const {}
 };
     
+} // graphicsns
 } // corens
 
 #endif // CORE_SAMPLER_HPP_

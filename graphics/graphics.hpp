@@ -16,6 +16,7 @@
 #include "tcolor.hpp"
 
 namespace core {
+namespace graphics {
 
 //using Color = TColor3<float32>;
 using Color = glm::vec3;
@@ -25,7 +26,8 @@ using RGBALow = TColor4<uint8>;
 
 using YUVHigh = TColor3<float32>;
 using YUVLow = TColor3<uint8>;
-
+    
+} // graphicsns
 } // corens
     
 #endif // GRAPHICS_H_123_
