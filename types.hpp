@@ -103,6 +103,9 @@ namespace core {
 # endif
 	using vec = float32;
 #endif
+    
+// Byte
+using Byte = uint8;
 
 // Codepoints
 using UNICODE = uint32;

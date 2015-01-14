@@ -11,6 +11,7 @@
 #define BUFFER_H_123_
 
 #include "graphics.hpp"
+#include <buffer.hpp>
 
 namespace core {
 namespace graphics {
@@ -23,7 +24,13 @@ namespace graphics {
     
     class Buffer
     {
-        
+    private:
+        size_t width;
+        size_t height;
+        size_t depth;
+        core::Buffer::Shared buffer;
+    public:
+        Buffer( size_t width , size_t height, size_t depth , core::Buffer::Shared buffer );
     };
         
 } // graphicsns
