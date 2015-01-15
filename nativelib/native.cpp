@@ -103,7 +103,7 @@ bool saveImage(
 	return false;
 }*/
 
-template <> bool load( std::string path , BufferSampler<RGBALow>& buffer )
+    template <> bool load( std::string path , graphics::Buffer2D<graphics::RGBALow>& buffer )
 {
 	int x,y,comp,req;
 	req = 4;
@@ -116,7 +116,7 @@ template <> bool load( std::string path , BufferSampler<RGBALow>& buffer )
 	
 	buffer.init((uint)x, (uint)y );
 	
-	std::memcpy( buffer.getBuffer() , data, x*y*4);
+	std::memcpy( buffer.get() , data, x*y*4);
 	
 	stbi_image_free(data);
 	
@@ -124,10 +124,10 @@ template <> bool load( std::string path , BufferSampler<RGBALow>& buffer )
 }
 //template <> bool load( std::string location , std::string name , PixelBuffer<RGBAHigh>& buffer );
 	
-template <> bool save( std::string path , BufferSampler<RGBALow>& buffer )
+template <> bool save( std::string path , graphics::Buffer2D<graphics::RGBALow>& buffer )
 {
 	std::string filename = path + ".png";
-	return stbi_write_png(filename.c_str(), buffer.getWidth(), buffer.getHeight(), 4, buffer.getBuffer() , 0) == 1;
+	return stbi_write_png(filename.c_str(), buffer.getWidth(), buffer.getHeight(), 4, buffer.get() , 0) == 1;
 }
 	
 //template <> bool save( std::string location , std::string name , PixelBuffer<RGBAHigh>& buffer );
