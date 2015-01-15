@@ -11,34 +11,34 @@
 #include <types.hpp>
 
 namespace core  {
-
-class Application 
-{
-public:
-    virtual ~Application() 
-    {
-    }
+	class Application
+	{
+	public:
+		using Shared = std::shared_ptr<Application>;
+	public:
+		virtual ~Application()
+		{
+		}
     
-    virtual bool init()
-    {
-    	return true;
-    }
+		virtual bool init()
+		{
+			return true;
+		}
     
-    virtual void run() 
-    {
-    }
+		virtual void run()
+		{
+		}
     
-    virtual bool complete() 
-    {
-    	return true;
-    }
+		virtual bool complete()
+		{
+			return true;
+		}
     
-    virtual std::string getName() const
-    {
-    	return "unknown";
-    }
-};
-
+		virtual std::string getName() const
+		{
+			return "unknown";
+		}
+	};
 } // corens
 
 #endif	// APPLICATION_HPP 
