@@ -12,6 +12,7 @@
 #include <graphics/buffer2d.hpp>
 #include <graphics/pixelformat.hpp>
 #include "sampler.hpp"
+#include <exceptions/outofbounds.hpp>
 
 namespace core {
 namespace graphics {
@@ -54,7 +55,7 @@ public:
         
 		if( index >= (width*height) )
 		{
-			throw "NOOO";
+            throw OutOfBounds("Buffer2DSampler out of bounds.");
 		}
 		convert( color , ptr[index] );
 	}
@@ -73,7 +74,7 @@ public:
         
         if( index >= (width*height) )
         {
-            throw "NOOO";
+            throw OutOfBounds("Buffer2DSampler out of bounds.");
         }
         convert( color , ptr[index] );
 	}

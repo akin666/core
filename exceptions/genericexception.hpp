@@ -2,13 +2,13 @@
  * File:   genericexception
  * Author: akin
  *
- * Created on 15.1.2015, 21:10
+ * Created on 15.1.2015
  *
  * Generic exception that should be specialized.
  */
 
-#ifndef CCCGENERIC_EXCEPTION_HPP
-#define	CCCGENERIC_EXCEPTION_HPP
+#ifndef CCC_GENERIC_EXCEPTION_HPP
+#define	CCC_GENERIC_EXCEPTION_HPP
 
 #include "exception.hpp"
 #include <string>
@@ -28,4 +28,4 @@ namespace core  {
 
 } // corens
 
-#endif	// CCCGENERIC_EXCEPTION_HPP
+#endif	// CCC_GENERIC_EXCEPTION_HPP

@@ -8,6 +8,8 @@
 #include <config.hpp>
 #include <unordered_map>
 #include <vector>
+#include <exceptions/notfound.hpp>
+#include <exceptions/genericexception.hpp>
 
 namespace core {
 namespace config {
@@ -35,12 +37,12 @@ namespace config {
     
     void load( std::string path )
     {
-        throw "";
+        throw GenericException( "Config Failed to load " + path );
     }
     
     void save( std::string path )
     {
-        throw "";
+        throw GenericException( "Config Failed to save to " + path );
     }
     
     void clear()
@@ -60,19 +62,19 @@ namespace config {
         
         if( iter == data.end() )
         {
-            throw "not found";
+            throw NotFound("Config index Not found: " + path );
         }
         const auto& entry = iter->second;
         
         if( entry.type != INTEGER )
         {
-            throw "invalid type";
+            throw GenericException("Config invalid type requested: " + path );
         }
         
         auto& vec = integers;
         if( vec.size() > entry.index )
         {
-            throw "invalid index";
+            throw GenericException("Config invalid type index requested: " + path );
         }
         
         return vec[entry.index];
@@ -84,19 +86,19 @@ namespace config {
         
         if( iter == data.end() )
         {
-            throw "not found";
+            throw NotFound("Config index Not found: " + path );
         }
         const auto& entry = iter->second;
         
         if( entry.type != FLOAT )
         {
-            throw "invalid type";
+            throw GenericException("Config invalid type requested: " + path );
         }
         
         auto& vec = floats;
         if( vec.size() > entry.index )
         {
-            throw "invalid index";
+            throw GenericException("Config invalid type index requested: " + path );
         }
         
         return vec[entry.index];
@@ -108,19 +110,19 @@ namespace config {
         
         if( iter == data.end() )
         {
-            throw "not found";
+            throw NotFound("Config index Not found: " + path );
         }
         const auto& entry = iter->second;
         
         if( entry.type != STRING )
         {
-            throw "invalid type";
+            throw GenericException("Config invalid type requested: " + path );
         }
         
         auto& vec = strings;
         if( vec.size() > entry.index )
         {
-            throw "invalid index";
+            throw GenericException("Config invalid type index requested: " + path );
         }
         
         return vec[entry.index];
@@ -132,19 +134,19 @@ namespace config {
         
         if( iter == data.end() )
         {
-            throw "not found";
+            throw NotFound("Config index Not found: " + path );
         }
         const auto& entry = iter->second;
         
         if( entry.type != BOOL )
         {
-            throw "invalid type";
+            throw GenericException("Config invalid type requested: " + path );
         }
         
         auto& vec = bools;
         if( vec.size() > entry.index )
         {
-            throw "invalid index";
+            throw GenericException("Config invalid type index requested: " + path );
         }
         
         return vec[entry.index];

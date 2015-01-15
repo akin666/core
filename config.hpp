@@ -9,6 +9,7 @@
 #define CONFIG_ABC_HPP_
 
 #include <types.hpp>
+#include <exceptions/notimplemented.hpp>
 
 namespace core {
 namespace config {
@@ -28,7 +29,7 @@ namespace config {
         }
         return def;
     }
-    template <class TClass> TClass get( const std::string& path ) { throw ""; }
+    template <class TClass> TClass get( const std::string& path ) { throw NotImplemented("Config get not implemented."); }
     template <class TClass> void set( const std::string& path , TClass value ) {}
     
     // specializations

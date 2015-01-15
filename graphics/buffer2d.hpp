@@ -12,6 +12,7 @@
 
 #include "graphics.hpp"
 #include <memory.hpp>
+#include <exceptions/outofbounds.hpp>
 
 namespace core {
 namespace graphics {
@@ -61,7 +62,7 @@ namespace graphics {
             size_t idx = y * width + x;
             if( idx > memory.size<PixelFormat>() )
             {
-                throw "Overflow!";
+                throw OutOfBounds("Buffer2D out of bounds.");
             }
             return pixels[idx];
         }

@@ -2,7 +2,7 @@
  * File:   exception
  * Author: akin
  *
- * Created on 20. lokakuuta 2014, 21:10
+ * Created on 15.1.2015
  */
 
 #include "exception.hpp"

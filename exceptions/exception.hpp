@@ -2,7 +2,7 @@
  * File:   exception
  * Author: akin
  *
- * Created on 15.1.2015, 21:10
+ * Created on 15.1.2015
  *
  * Wraps standard exception, and
  * is the base class for all core::Exceptions
