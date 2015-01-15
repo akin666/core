@@ -33,14 +33,17 @@ namespace graphics {
         size_t width;
         size_t height;
         core::Memory memory;
+        PixelFormat *pixels;
     public:
         Buffer2D()
+        : pixels(nullptr)
         {
         }
         
         void init( size_t width , size_t height )
         {
             memory.init<PixelFormat>(width * height);
+            pixels = memory.get<PixelFormat>();
         }
         
         inline size_t getWidth() const
@@ -55,20 +58,17 @@ namespace graphics {
         
         PixelFormat at( size_t x , size_t y ) const
         {
-            PixelFormat *pixels = get();
-            
             size_t idx = y * width + x;
             if( idx > memory.size<PixelFormat>() )
             {
                 throw "Overflow!";
             }
-            
             return pixels[idx];
         }
         
         PixelFormat *get() const
         {
-            return memory.get<PixelFormat>();
+            return pixels;
         }
     };
     

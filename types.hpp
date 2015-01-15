@@ -23,6 +23,7 @@
 #include <unordered_map>
 #include <map>
 #include <tuple> 	// std::make_tuple + tuples in general.
+#include "exceptions/exception.hpp" // core exception type
 
 namespace core {
 
