@@ -4,6 +4,7 @@
  */
 
 #include "memory.hpp"
+#include <exceptions/cannot.hpp>
 
 namespace core {
     
@@ -25,7 +26,7 @@ namespace core {
     {
         if( ptr != nullptr )
         {
-            throw "Already allocated";
+            throw Cannot("Memory Already allocated.");
         }
         
         totalSize = size;
