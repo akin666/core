@@ -9,7 +9,7 @@
 
 namespace core  {
     NotImplemented::NotImplemented( std::string msg )
-    : msg(msg)
+    : msg("Not implemented Exception: " + msg)
     {
     }
     

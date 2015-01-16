@@ -9,7 +9,7 @@
 
 namespace core  {
     Cannot::Cannot( std::string msg )
-    : msg(msg)
+    : msg("Can not Exception: " + msg)
     {
     }
     

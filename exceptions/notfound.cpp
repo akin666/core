@@ -9,7 +9,7 @@
 
 namespace core  {
     NotFound::NotFound( std::string msg )
-    : msg("NotFoundException: " + msg)
+    : msg("Not found Exception: " + msg)
     {
     }
     

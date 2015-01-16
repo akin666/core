@@ -9,7 +9,7 @@
 
 namespace core  {
     InvalidType::InvalidType( std::string msg )
-    : msg(msg)
+    : msg("Invalid type Exception: " + msg)
     {
     }
     

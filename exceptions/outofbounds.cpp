@@ -9,7 +9,7 @@
 
 namespace core  {
     OutOfBounds::OutOfBounds( std::string msg )
-    : msg("OutOfBoundsException: " + msg)
+    : msg("Out of bounds Exception: " + msg)
     {
         
     }
