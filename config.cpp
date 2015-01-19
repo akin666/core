@@ -39,6 +39,10 @@ namespace config {
     
     void load( std::string path )
     {
+		// Go through config,
+		// save things with '.' notation.. like
+		// Settings.Screen.Height
+		// Settings.Screen.Width
         throw GenericException( "Config Failed to load " + path );
     }
     

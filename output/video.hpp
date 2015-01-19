@@ -21,8 +21,11 @@ class Video
 private:
 	std::ofstream out;
 	std::string name;
+	std::string filename;
+	size_t width;
+	size_t height;
 public:
-	bool init(std::string name, std::string path , int width , int height , graphics::Format inputformat , int dpi , int framerate );
+	bool init(std::string name, std::string path , size_t width , size_t height , graphics::Format inputformat , int dpi , int framerate );
 	void append( const void *pixels , size_t count );
 	void close();
 
