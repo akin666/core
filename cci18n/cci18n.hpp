@@ -13,7 +13,7 @@
 namespace core {
 namespace cci18n {
     
-    void load( std::string path );
+	void load( std::string key , std::string path );
     void save( std::string path );
     void clear();
 	

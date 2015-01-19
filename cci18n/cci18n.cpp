@@ -7,7 +7,12 @@
 
 #include "cci18n.hpp"
 #include <exceptions/notimplemented.hpp>
+#include <exceptions/notfound.hpp>
+#include <exceptions/error.hpp>
 #include "internal.hpp"
+
+#include <json/json.h>
+#include <fstream>
 
 namespace core {
 namespace cci18n {
@@ -51,9 +56,68 @@ namespace cci18n {
 		shared = defaultLanguage;
 	}
 	
-    void load( std::string path )
+	void handle( std::string path , const Json::Value& value , Language& language )
+	{
+		if( value.isObject() )
+		{
+			auto childs = value.getMemberNames();
+			
+			for( auto key : childs )
+			{
+				handle( path + "." + key , value[key] , language );
+			}
+			return;
+		}
+		else if( value.isString() )
+		{
+			language[path] = value.asString();
+		}
+		else
+		{
+			throw NotImplemented("Json parsing does not implement this.");
+		}
+	}
+	
+	void handleRoot( const Json::Value& value , Language& language )
+	{
+		if( value.isObject() )
+		{
+			auto childs = value.getMemberNames();
+			for( auto key : childs )
+			{
+				handle( key , value[key] , language );
+			}
+		}
+	}
+	
+    void load( std::string key , std::string path )
     {
-        throw NotImplemented( "cci18n load" );
+		Json::Value root;
+		Json::Reader reader;
+		
+		std::ifstream in(path);
+		
+		if( !in.is_open() )
+		{
+			throw NotFound(path);
+		}
+		
+		if( !reader.parse( in , root , false ) )
+		{
+			throw Error(reader.getFormatedErrorMessages());
+		}
+		
+		SharedLanguage slanguage;
+		
+		get( key , slanguage );
+		
+		if( !slanguage )
+		{
+			slanguage = std::make_shared<Language>();
+			languages[key] = slanguage;
+		}
+		
+		handleRoot( root , *slanguage );
     }
     
     void save( std::string path )
