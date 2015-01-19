@@ -11,7 +11,11 @@
 #include <exceptions/notfound.hpp>
 #include <exceptions/invalidtype.hpp>
 #include <exceptions/outofbounds.hpp>
+#include <exceptions/error.hpp>
 #include <exceptions/genericexception.hpp>
+
+#include <json/json.h>
+#include <fstream>
 
 namespace core {
 namespace config {
@@ -36,14 +40,81 @@ namespace config {
     std::vector<float> floats;
     std::vector<bool> bools;
     std::vector<std::string> strings;
-    
+	
+	void handle( std::string path , const Json::Value& value )
+	{
+		if( value.isObject() )
+		{
+			auto childs = value.getMemberNames();
+			
+			for( auto key : childs )
+			{
+				handle( path + "." + key , value[key] );
+			}
+			return;
+		}
+		else if( value.isNumeric() )
+		{
+			// int, uint float double..
+			if( value.isInt() )
+			{
+				set<int>( path , value.asInt() );
+ 			}
+			else
+			{
+				set<float>( path , value.asFloat() );
+			}
+		}
+		else if( value.isString() )
+		{
+			set<std::string>( path , value.asString() );
+		}
+		else if( value.isBool() )
+		{
+			set<bool>( path , value.asBool() );
+		}
+		else
+		{
+			throw NotImplemented("Json parsing does not implement this.");
+		}
+	}
+	
+	void handleRoot( const Json::Value& value )
+	{
+		if( value.isObject() )
+		{
+			auto childs = value.getMemberNames();
+			for( auto key : childs )
+			{
+				handle( key , value[key] );
+			}
+		}
+	}
+	
     void load( std::string path )
     {
+		Json::Value root;
+		Json::Reader reader;
+		
+		std::ifstream in(path);
+		
+		if( !in.is_open() )
+		{
+			throw NotFound(path);
+		}
+		
+		if( !reader.parse( in , root , false ) )
+		{
+			throw Error(reader.getFormatedErrorMessages());
+		}
+		
+		handleRoot( root );
+		
 		// Go through config,
 		// save things with '.' notation.. like
 		// Settings.Screen.Height
 		// Settings.Screen.Width
-        throw GenericException( "Config Failed to load " + path );
+        //throw GenericException( "Config Failed to load " + path );
     }
     
     void save( std::string path )
