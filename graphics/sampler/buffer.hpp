@@ -34,8 +34,8 @@ public:
 
 	virtual void at( const float& at , Color& color ) const
 	{
-        auto *ptr = buffer->get();
-        size_t width = buffer->getWidth();
+        auto *ptr = buffer->buffer();
+        size_t width = buffer->width();
 		size_t index = ((uint)at) % width;
 		
 		convert( color , ptr[index] );
@@ -43,15 +43,15 @@ public:
 	
 	virtual void at( const glm::vec2& at , Color& color ) const
     {
-        size_t width = buffer->getWidth();
-        size_t height = buffer->getHeight();
+        size_t width = buffer->width();
+        size_t height = buffer->height();
         
 		uint x = ((uint)at.x) % width;
 		uint y = ((uint)at.y) % height;
         
         size_t index = ((y*width)+x);
         
-        auto *ptr = buffer->get();
+        auto *ptr = buffer->buffer();
         
 		if( index >= (width*height) )
 		{
@@ -62,15 +62,15 @@ public:
 	
 	virtual void at( const glm::vec3& at , Color& color ) const
     {
-        size_t width = buffer->getWidth();
-        size_t height = buffer->getHeight();
+        size_t width = buffer->width();
+        size_t height = buffer->height();
         
         uint x = ((uint)at.x) % width;
         uint y = ((uint)at.y) % height;
         
         size_t index = ((y*width)+x);
         
-        auto *ptr = buffer->get();
+        auto *ptr = buffer->buffer();
         
         if( index >= (width*height) )
         {

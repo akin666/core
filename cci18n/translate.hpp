@@ -8,23 +8,31 @@
 #ifndef CC_I18N_TRANSLATE_HPP_
 #define CC_I18N_TRANSLATE_HPP_
 
-#include <string>
+#include "internal.hpp"
 
 namespace core {
 namespace cci18n {
 	
 	class Translate
 	{
+	private:
+		SharedLanguage shared;
+		std::string current;
 	public:
 		Translate();
-		Translate( std::string lang );
+		Translate( const std::string& lang );
 		
 		~Translate();
+		
+		void init( const std::string& lang );
 		
 		std::string instant( const std::string& key ) const;
 		void instant( const std::string& key , std::string& value ) const;
 		
 		void set( const std::string&key , const std::string& value );
+		
+		bool ok() const;
+		std::string language() const;
 	};
 	
 } // cci18nns

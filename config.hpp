@@ -17,7 +17,10 @@ namespace config {
     void load( std::string path );
     void save( std::string path );
     void clear();
-    
+	
+    template <class TClass> TClass get( const std::string& path ) { throw NotImplemented("Config get."); }
+    template <class TClass> void set( const std::string& path , TClass value ) {}
+	
     template <class TClass> TClass get( const std::string& path , TClass def )
     {
         try
@@ -29,8 +32,6 @@ namespace config {
         }
         return def;
     }
-    template <class TClass> TClass get( const std::string& path ) { throw NotImplemented("Config get not implemented."); }
-    template <class TClass> void set( const std::string& path , TClass value ) {}
     
     // specializations
     /// get

@@ -17,6 +17,8 @@ namespace cci18n {
     void save( std::string path );
     void clear();
 	
+	void setDefault( const std::string& lang );
+	
 	void alias( std::string value , std::string key );
 	
 } // cci18nns

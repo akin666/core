@@ -67,22 +67,32 @@ namespace graphics {
 			return memory->size<PixelFormat>();
 		}
 		
-        PixelFormat at( size_t x , size_t y ) const
-        {
-            size_t idx = y * w + x;
-            if( idx > memory->size<PixelFormat>() )
-            {
-                throw OutOfBounds("Buffer2D out of bounds.");
-            }
-            return pixels[idx];
-        }
-        
-        PixelFormat *get() const
+		PixelFormat get( size_t x , size_t y ) const
+		{
+			size_t idx = y * w + x;
+			if( idx > memory->size<PixelFormat>() )
+			{
+				throw OutOfBounds("Buffer2D out of bounds.");
+			}
+			return pixels[idx];
+		}
+		
+		void set( size_t x , size_t y , PixelFormat pixel )
+		{
+			size_t idx = y * w + x;
+			if( idx > memory->size<PixelFormat>() )
+			{
+				throw OutOfBounds("Buffer2D out of bounds.");
+			}
+			pixels[idx] = pixel;
+		}
+		
+        PixelFormat *buffer() const
         {
             return pixels;
-        }
+		}
     };
-    
+	
 } // graphicsns
 } // corens
 
