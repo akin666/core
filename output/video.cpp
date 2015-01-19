@@ -9,6 +9,7 @@
 #include "video.hpp"
 #include <native.hpp>
 #include <cstdlib>
+#include <log.hpp>
 
 namespace core {
 namespace output {
@@ -59,8 +60,9 @@ void Video::close()
 	
 	const int maxbuffer = 1024;
 	char buffer[ maxbuffer ];
-	snprintf( buffer, (maxbuffer - 1), "ffmpeg -s %zux%zu %s -vcodec libx264 %s" , width , height , infile.c_str() , outfile.c_str() );
+	snprintf( buffer, (maxbuffer - 1), "ffmpeg -s %zux%zu -i %s -vcodec libx264 %s" , width , height , infile.c_str() , outfile.c_str() );
 	
+	LOG(INFO) << "Converting video to x264: " << buffer;
 	std::system( buffer );
 	
 	out.close();
