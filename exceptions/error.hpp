@@ -7,7 +7,7 @@
  */
 
 #ifndef CCC_ERROR_EXCEPTION_HPP
-#define	CCC_CANNOT_EXCEPTION_HPP
+#define	CCC_ERROR_EXCEPTION_HPP
 
 #include "exception.hpp"
 #include <string>
