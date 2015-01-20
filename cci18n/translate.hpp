@@ -20,7 +20,7 @@ namespace cci18n {
 		std::string current;
 	public:
 		Translate();
-		Translate( const std::string& lang );
+		explicit Translate( const std::string& lang );
 		
 		~Translate();
 		
