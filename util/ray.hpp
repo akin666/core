@@ -8,7 +8,7 @@
 #ifndef CORE_RAY_HPP_
 #define CORE_RAY_HPP_
 
-#include <core.hpp>
+#include <glm/glm.hpp>
 
 namespace core {
 	class Ray

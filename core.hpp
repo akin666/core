@@ -17,4 +17,8 @@
 // logging is coretech
 #include <log.hpp>
 
+#include <util/ray.hpp>
+#include <util/line.hpp>
+#include <util/collision.hpp>
+
 #endif
